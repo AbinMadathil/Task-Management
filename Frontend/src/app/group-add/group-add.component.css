@@ -1,0 +1,52 @@
+/* modal.component.css */
+
+.modal-container {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+.Modal_box{
+    margin: 10px auto;
+}
+
+  .modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-footer {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  /* Add some styling to the input and buttons */
+  input {
+    width: 50%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  /* Style the primary button differently */
+  .btn-primary {
+    background-color: #002549;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  /* Add hover effect to buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  

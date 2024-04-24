@@ -1,0 +1,30 @@
+<div class="Modal_box">
+    <h1>Add Task Details</h1>
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" formControlName="description" />
+      </div>
+  
+      <div>
+        <label for="dueDate">Due Date:</label>
+        <input type="datetime-local" id="dueDate"  formControlName="dueDate" />
+      </div>
+      <div>
+        <label for="assigneeMail">Assignee Email:</label>
+        <input type="email" id="assigneeMail" formControlName="assigneeMail" />
+      </div>
+    
+      <div>
+        <label for="currentStatusId">Current Status:</label>
+        <select id="currentStatusId" formControlName="currentStatusId">
+          <option *ngFor="let status of statuses" [value]="status.projectTaskStatusId">
+            {{ status.statusText}}
+          </option>
+        </select>
+      </div>
+    
+      <button type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">Submit</button>
+      <button type="button" class="btn btn-danger" (click)="CloseModal()">Close</button>
+    </form>
+</div>

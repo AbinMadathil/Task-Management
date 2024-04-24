@@ -1,0 +1,33 @@
+
+<div class="Head_Class">
+  <h2>Projects for Group ID: {{ grpid }}</h2>
+  
+  <div class="button_Add">
+    <button type="button" class="btn btn-primary" (click)="AddProjectModal()">Add Project(+)</button>
+  </div>
+</div>
+<div>
+    <table>
+      <thead>
+        <tr>
+          <th>Project Id</th>
+          <th>Project Name</th>
+          <th>Description</th>
+          <th>Tasks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of paginatedProjects; let i = index">
+          <td>{{project.projectId}}</td>
+          <td>{{ project.projectName }}</td>
+          <td>{{ project.projectDescription }}</td>
+          <td><button (click)="TaskDetails(project.projectId,project.projectName)" >Task Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="button_pagination" >
+      <button (click)="movePrev()" [hidden]="currentPage === 1">prev</button> 
+      <button (click)="moveNext()" [hidden]="currentPage === totalPages || totalPages === 0">next</button>
+    </div>
+
+  </div>

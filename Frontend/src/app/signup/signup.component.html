@@ -1,0 +1,36 @@
+<form [formGroup]="SignForm" (ngSubmit)="onSubmit()">
+    <h2>SignUp Form</h2>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" />
+      <div *ngIf="SignForm.get('email')?.errors?.['required'] && SignForm.get('email')?.touched">Email is required</div>
+      <div *ngIf="SignForm.get('email')?.errors?.['email']">Invalid email format</div>
+    </div>
+  
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" />
+      <div *ngIf="SignForm.get('password')?.errors?.['required'] && SignForm.get('password')?.touched">Password is required</div>
+      <div *ngIf="SignForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters</div>
+    </div>
+  
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" />
+    </div>
+  
+    <div>
+      <label for="groupName">Group Name:</label>
+      <input type="text" id="groupName" formControlName="groupName" />
+    </div>
+  
+    <div>
+      <label for="referralCode">Referral Code:</label>
+      <input type="text" id="referralCode" formControlName="referralCode" />
+    </div>
+  
+    <button type="submit">Submit Data</button>
+  
+    
+  </form>
+  

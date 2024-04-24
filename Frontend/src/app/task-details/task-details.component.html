@@ -1,0 +1,38 @@
+<ng-template #loading>
+    <!-- Loading template -->
+
+    <p style="display: flex; justify-content: center; margin-top:50px;">Loading...</p>
+
+</ng-template>
+
+<div class="container" *ngIf="taskDetails;else loading">
+    <div class="heading_tasks">
+        <h1 style="color: #4CAF50;"><b>Task Details</b></h1>
+    </div>
+    <div class="task-details">
+        <p><strong>Description:</strong> {{ taskDetails.description }}</p>
+        <p><strong>Assignee:</strong> {{ taskDetails.assignee }}</p>
+        <p><strong>Created By:</strong> {{ taskDetails.createdBy }}</p>
+        <p><strong>Status:</strong> {{ taskDetails.currentStatus }}</p>
+        <p><strong>Due Date:</strong> {{ taskDetails.dueDate }}</p>
+    </div>
+
+    <div class="comments">
+        <h2>Comments</h2>
+
+        <form [formGroup]="commentForm" (ngSubmit)="addComment()">
+            <div class="form-group">
+                <label for="commentText">Add Comment:</label>
+                <textarea id="commentText" formControlName="commentText" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Comment</button>
+        </form>
+        <div class="comment_Section">
+            <div class="comment" *ngFor="let comment of displayedComments">
+                <p>{{ comment.commentText }}</p>
+                <div class="meta">Created at: {{ comment.createdAt }}</div>
+            </div>
+        </div>
+        <button *ngIf="taskComments.length>3 && !allTasksDisplayed" (click)="showMoreComments()">Show More</button>
+    </div>
+</div>

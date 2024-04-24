@@ -1,0 +1,78 @@
+<ng-template #loading>
+    <!-- Loading template -->
+
+    <p style="display: flex; justify-content: center;">Loading...</p>
+
+</ng-template>
+
+
+<div class="Allocatable_Status">
+    <p><b>Tasks Statuses For "{{projectName}}"</b></p>
+    <thead>
+        <tr>
+            <th>statusId</th>
+            <th>Status description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let status of taskStauses; let i = index" [class.even-row]="i % 2 === 0">
+            <td>{{ status.projectTaskStatusId}}</td>
+            <td [style.background-color]="status.statusColor">{{ status.statusText }}</td>
+        </tr>
+    </tbody>
+
+</div>
+<div
+    style="display: flex;justify-content: space-between; margin-top: 20px; margin-bottom: -18px; margin-left: 10%;margin-right: 10%;">
+    <h2><b>Tasks for "{{projectName}}"</b></h2>
+    <div class="button_Add">
+        <button type="button" class="btn btn-primary" (click)="AddTasksModal()">Add Task(+)</button>
+    </div>
+</div>
+<div>
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>TaskId</th>
+                <th>TaskDescription</th>
+                <th>Current Status</th>
+                <th>Created By</th>
+                <th>Assignee</th>
+                <th>Due Date</th>
+            </tr>
+        </thead>
+
+        <tbody *ngIf="loaded; else loading">
+           <tr *ngFor="let item of taskArrays; let i = index" [class.even-row]="i % 2 === 0"> -->
+
+            <!-- <td>{{ task.taskId}}</td>
+                <td>{{ task.description }}</td>
+                <td [style.background-color]="getStatusColor(task.currentStatus)">{{task.currentStatus}}</td>
+                <td>{{task.createdBy}}</td>
+                <td>{{task.assignee}}</td>
+                <td>{{task.dueDate}}</td> -->
+            <!-- </tr> -->
+
+
+        <!-- </tbody>
+    </table> --> 
+
+    <div class="status-full">
+        <div *ngFor="let entry of taskArrays | keyvalue">
+            <div class="status-container">
+                <h3>{{ entry.key }}</h3>
+                <div [routerLink]="['/dashboard/projects/tasks/comments']" [queryParams]="{ taskId: task.taskId, grpId: grpId, projectId: projectId }" *ngFor="let task of entry.value">
+                    <!-- <p>Task ID: {{ task.taskId }}</p> -->
+                    <p>Description: {{ task.description }}</p>
+                    <p>Due Date: {{ task.dueDate }}</p>
+                    <p>Assignee: {{ task.assignee }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="button_pagination" >
+        <button (click)="movePrev()" [hidden]="currentPage === 1">prev</button>
+        <button (click)="moveNext()" [hidden]="currentPage === totalPages || totalPages === undefined  || totalPages === 0">next</button>
+
+    </div> -->
+</div>

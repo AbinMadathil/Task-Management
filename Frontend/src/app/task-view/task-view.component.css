@@ -1,0 +1,103 @@
+/* Updated styles for task containers */
+.status-full {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 22px;
+    margin-left: 10%;
+    border-left: 10% solid #333; /* Border-left width and color */
+}
+
+.status-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow containers to grow to fill available space */
+    background-color: #f0f0f0; /* Background color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 16px; /* Add some padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.status-container h3 {
+    margin-top: 0; /* Remove margin from heading */
+    color: #333; /* Heading color */
+    font-size: 18px; /* Heading font size */
+    font-weight: bold; /* Heading font weight */
+}
+
+.status-container p {
+    margin: 8px 0; /* Add margin to paragraphs */
+    color: #666; /* Paragraph color */
+}
+
+/* Box-style appearance for inner divs */
+.status-container div {
+    border: 1px solid #ccc; /* Border for inner divs */
+    border-radius: 6px; /* Rounded corners */
+    padding: 8px; /* Add padding */
+    margin-top: 8px; /* Add margin-top */
+    margin-bottom: 8px; /* Add margin-bottom */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for inner divs */
+.status-container div:hover {
+    background-color: #e0e0e0; /* Darken background on hover */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Hover effect for status containers */
+/* .status-container:hover {
+    background-color: #e0e0e0; 
+    cursor: pointer; 
+} */
+
+
+
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 80%;
+    margin-left:10%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Alternating Row Colors */
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Hover Effect on Rows */
+  tbody tr:hover {
+    background-color: #ddd;
+  }
+  
+  /* Custom Class for Even Rows */
+  .even-row {
+    /* font-weight: bold; */
+    color: black;
+  }
+
+  .Allocatable_Status{
+    margin-left:10%;
+  }

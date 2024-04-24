@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#" style="padding-left:20px">Task-Management</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="SignUpLogIn">
+        <div *ngIf="NotAlreadyLogged; else AlreadyLogged">
+            <div *ngIf="LoggedIn; else notLoggedIn">
+              <a class="nav-link" href="/signup" (click)="SignUpClicked()">signUp</a>
+            </div>
+          
+            <ng-template #notLoggedIn>
+              <a class="nav-link" href="/" (click)="LogInClicked()">LogIn</a>
+            </ng-template>
+          
+          </div>
+          
+          <ng-template #AlreadyLogged>
+            <a class="nav-link" href="/" (click)="LogOut()">Log Out</a>
+          </ng-template>          
+    </div>
+  </nav>
+
+<router-outlet></router-outlet>

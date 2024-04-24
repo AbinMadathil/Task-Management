@@ -1,0 +1,12 @@
+<div class="Modal_box">
+    <h1>Add Group Details</h1>
+    <form [formGroup]="groupNameForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="groupName">Group Name:</label>
+            <input type="text" id="groupName" formControlName="groupName" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="groupNameForm.invalid">Submit</button>
+        <button type="button" class="btn btn-danger" (click)="CloseModal()">Close</button>
+    </form>
+</div>
